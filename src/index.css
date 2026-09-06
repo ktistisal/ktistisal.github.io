@@ -2,13 +2,18 @@
 
 @theme {
   --color-background: #222831;
-  --color-primary: #30475e;
-  --color-secondary: #f05454;
+  --color-primary: #7f9bb8;
+  --color-secondary: #e0a458;
   --color-foreground: #dddddd;
+  --color-highlight: powderblue;
 }
 
 @layer base {
   body {
-    @apply w-full min-h-screen m-0 bg-background text-foreground;
+    @apply w-full min-h-screen m-0 bg-background text-foreground font-mono;
   }
+}
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
