@@ -1,6 +1,6 @@
 import MyLink from "../components/MyLink";
 
-export const version = "v0.2";
+export const version = "v0.2.1";
 
 export const defaultHistory = {
   type: "output",
@@ -62,8 +62,8 @@ export const aboutOutput = {
   I'm a developer who enjoys building things, solving problems, and learning 
   along the way.
 
-  I made this site as a small interactive portfolio, inspired by the simplicity 
-  and feel of an actual terminal.
+  I made this site as a small interactive personal website, inspired by the 
+  simplicity and feel of an actual terminal.
   
   Explore around, or try 'help' to see what you can do.
 
