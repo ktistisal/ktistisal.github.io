@@ -5,6 +5,8 @@ import {
   pwdOutput,
   whoamiOutput,
   notFoundOutput,
+  findMeOutput,
+  aboutOutput,
 } from "../constants";
 import Prompt from "./Prompt";
 
@@ -53,6 +55,12 @@ export default function Terminal() {
     switch (command) {
       case "help":
         addHistory(helpOutput);
+        break;
+      case "findme":
+        addHistory(findMeOutput);
+        break;
+      case "about":
+        addHistory(aboutOutput);
         break;
       case "pwd":
         addHistory(pwdOutput);
@@ -108,7 +116,7 @@ export default function Terminal() {
   return (
     <div className="w-full max-w-[80ch] min-h-full pb-[90vh] break-all">
       {history.map((line, index) => (
-        <div key={index} className="whitespace-pre">
+        <div key={index} className="whitespace-pre-wrap break-all">
           {line.type === "input" ? <Prompt text={line.text} /> : line.text}
         </div>
       ))}

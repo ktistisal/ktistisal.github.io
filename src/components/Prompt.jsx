@@ -11,5 +11,3 @@ export default function Prompt({ name = "guest", path = "~", text = "" }) {
     </span>
   );
 }
-
-// /home/guest
