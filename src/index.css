@@ -3,6 +3,7 @@
 @theme {
   --color-background: #222831;
   --color-primary: #7f9bb8;
+  --color-primary-dark: #2f3e4d;
   --color-secondary: #e0a458;
   --color-foreground: #dddddd;
   --color-highlight: powderblue;
@@ -11,9 +12,24 @@
 @layer base {
   body {
     @apply w-full min-h-screen m-0 bg-background text-foreground font-mono;
-  }
-}
 
-@utility no-scrollbar {
-  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary-dark) var(--color-background);
+  }
+
+  body::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--color-primary-dark);
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary-dark);
+  }
 }
