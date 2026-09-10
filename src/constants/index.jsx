@@ -1,7 +1,7 @@
 import MyLink from "../components/MyLink";
 import Command from "../components/Command";
 
-export const version = "v0.3.0";
+export const version = "v0.4.0";
 
 export const asciiArt = ` __      __  .__          __  .__               .__   
 |  | ___/  |_|__| _______/  |_|__| ___________  |  |  
@@ -16,9 +16,10 @@ export const defaultHistory = {
     <>
       <div>{asciiArt}</div>
       <br />
-      <div>{"  Welcome to my place on the web!"}</div>
+      <div className="font-bold">{" Welcome to my place on the web!"}</div>
+      <br />
       <div>
-        {"  Enter "}
+        {"  Type "}
         <Command name="help" />
         {" for a list of available commands."}
       </div>
@@ -32,7 +33,8 @@ export const helpOutput = {
   text: (
     <>
       <br />
-      <div className="font-bold">{"Built-in commands:"}</div>
+      <div className="font-bold">{" Built-in commands:"}</div>
+      <br />
       <div>
         {"  "}
         <Command name="about" />
@@ -42,6 +44,11 @@ export const helpOutput = {
         {"  "}
         <Command name="findme" />
         {".. Find me online"}
+      </div>
+      <div>
+        {"  "}
+        <Command name="contact" />
+        {". Send me a message"}
       </div>
       <div>
         {"  "}
@@ -78,12 +85,18 @@ export const notFoundOutput = (command) => ({
   text: `Command '${command}' not found`,
 });
 
+export const notFoundArg = (command, arg) => ({
+  type: "output",
+  text: `${command}: invalid option -- '${arg}'`,
+});
+
 export const findMeOutput = {
   type: "output",
   text: (
     <>
       <br />
-      <div className="font-bold">Find me online:</div>
+      <div className="font-bold">{" Find me online:"}</div>
+      <br />
       <MyLink name="linkedin" />
       <MyLink name="github" />
       <MyLink name="leetcode" />
@@ -96,15 +109,30 @@ export const aboutOutput = {
   type: "output",
   text: (
     <>
-      <div className="font-bold">{"\n  Hey, I'm Alex! 👋\n\n"}</div>
-      {"  I'm a developer from Greece 🇬🇷 who enjoys building\n"}
-      {"  things, solving problems and learning along the way.\n\n"}
+      <div className="font-bold">{"\n Hey, I'm Alex! 👋\n\n"}</div>
+      {"  I'm a developer from Greece 🇬🇷 who enjoys turning\n"}
+      {"  random ideas into things that actually work.\n\n"}
       {"  I made this site as a small interactive personal\n"}
       {"  website, inspired by the simplicity and feel of an \n"}
       {"  actual terminal.\n\n"}
-      {"  Explore around, or try "}
-      <Command name="help" />
-      {" to see what you can do.\n\n"}
+      {"  Feel free to explore. If you're looking for me\n"}
+      {"  online, try "}
+      <Command name="findme" />
+      {", or if you'd like to say hello, \n"}
+      {"  try "}
+      <Command name="contact" />
+      {"!\n\n"}
     </>
   ),
+};
+
+export const availableCommands = {
+  help: { args: [] },
+  about: { args: [] },
+  pwd: { args: [] },
+  whoami: { args: [] },
+  findme: { args: [] },
+  clear: { args: [] },
+  reset: { args: [] },
+  contact: { args: [] },
 };
