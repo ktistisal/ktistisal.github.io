@@ -1,7 +1,7 @@
 import MyLink from "../components/MyLink";
 import Command from "../components/Command";
 
-export const version = "v0.4.0";
+export const version = "v0.4.1";
 
 export const asciiArt = ` __      __  .__          __  .__               .__   
 |  | ___/  |_|__| _______/  |_|__| ___________  |  |  
@@ -49,11 +49,6 @@ export const helpOutput = {
         {"  "}
         <Command name="contact" />
         {". Send me a message"}
-      </div>
-      <div>
-        {"  "}
-        <Command name="clear" />
-        {"... Clear the terminal screen"}
       </div>
       <div>
         {"  "}
@@ -115,11 +110,10 @@ export const aboutOutput = {
       {"  I made this site as a small interactive personal\n"}
       {"  website, inspired by the simplicity and feel of an \n"}
       {"  actual terminal.\n\n"}
-      {"  Feel free to explore. If you're looking for me\n"}
-      {"  online, try "}
+      {"  If you're looking for me online, try "}
       <Command name="findme" />
-      {", or if you'd like to say hello, \n"}
-      {"  try "}
+      {", or if\n"}
+      {"  you'd like to say hello, try "}
       <Command name="contact" />
       {"!\n\n"}
     </>
